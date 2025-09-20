@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nonato Bakery | Authentic Megrelian Pastries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #F7F6F4;
+            --neutral-soft: #E9E5E1;
+            --text-color: #3D3A37;
+            --taupe: #BFA99B;
+            --terracotta: #D9735F;
+            --teal: #6BA3A0;
+            --deep: #252423;
+            --shadow: rgba(61, 58, 55, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--deep);
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--terracotta);
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--terracotta);
+            color: white;
+            box-shadow: 0 4px 14px rgba(217, 115, 95, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--deep);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(217, 115, 95, 0.5);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--deep);
+            border: 2px solid var(--taupe);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--taupe);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(247, 246, 244, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px var(--shadow);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--deep);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--terracotta);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--terracotta);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--terracotta);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--deep);
+            cursor: pointer;
+        }
+
+
+        /* Hero Section */
+        .hero {
+            padding: 10rem 0 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            margin-bottom: 1.5rem;
+            font-size: 3.2rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: var(--text-color);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .hero-image {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(135deg, var(--taupe) 0%, var(--teal) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 5rem;
+            box-shadow: 0 20px 40px var(--shadow);
+            transform: rotate(3deg);
+            transition: var(--transition);
+        }
+
+        .hero-image:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--neutral-soft);
+            border-radius: 30px;
+            margin: 2rem;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            height: 400px;
+            background-color: var(--taupe);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            box-shadow: 0 20px 40px var(--shadow);
+        }
+
+        .about-content h2 {
+            margin-bottom: 2rem;
+        }
+
+        .timeline {
+            display: flex;
+            overflow-x: auto;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            margin: 2rem 0;
+            scrollbar-width: thin;
+        }
+
+        .timeline-item {
+            min-width: 200px;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .timeline-year {
+            font-weight: 700;
+            color: var(--terracotta);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .values {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 5px 15px var(--shadow);
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px var(--shadow);
+        }
+
+        .value-icon {
+            font-size: 2rem;
+            color: var(--teal);
+            margin-bottom: 1rem;
+        }
+
+        .value-card h4 {
+            margin-bottom: 0.5rem;
+            color: var(--deep);
+        }
+
+        /* Menu Section */
+        .menu-filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.2rem;
+            background: white;
+            border: 1px solid var(--neutral-soft);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--terracotta);
+            color: white;
+            border-color: var(--terracotta);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px var(--shadow);
+        }
+
+        .menu-item-img {
+            height: 200px;
+            background-color: var(--taupe);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .menu-item-content {
+            padding: 1.5rem;
+        }
+
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.8rem;
+        }
+
+        .menu-item-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-item-price {
+            color: var(--terracotta);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .menu-item-desc {
+            color: var(--text-color);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .menu-item-tags {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            padding: 0.3rem 0.8rem;
+            background: var(--neutral-soft);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            color: var(--text-color);
+        }
+
+        .tag.veg {
+            background: rgba(107, 163, 160, 0.2);
+            color: var(--teal);
+        }
+
+        .tag.cheese {
+            background: rgba(191, 169, 155, 0.3);
+            color: var(--taupe);
+        }
+
+        .tag.sweet {
+            background: rgba(217, 115, 95, 0.2);
+            color: var(--terracotta);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(61, 58, 55, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: white;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+            transform: translateY(50px);
+            transition: transform 0.5s ease;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .modal.show .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-img {
+            height: 100%;
+            background-color: var(--taupe);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .modal-body {
+            padding: 2.5rem;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            cursor: pointer;
+        }
+
+        .modal-title {
+            margin-bottom: 1rem;
+        }
+
+        .modal-price {
+            color: var(--terracotta);
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-desc {
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-ingredients {
+            margin-bottom: 2rem;
+        }
+
+        .modal-ingredients h4 {
+            margin-bottom: 0.8rem;
+            color: var(--deep);
+        }
+
+        .modal-pairings {
+            margin-bottom: 2rem;
+        }
+
+        .modal-pairings h4 {
+            margin-bottom: 0.8rem;
+            color: var(--deep);
+        }
+
+        .modal-add {
+            width: 100%;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--deep);
+            color: white;
+            padding: 5rem 0 2rem;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1.5fr;
+            gap: 4rem;
+        }
+
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .footer-logo span {
+            color: var(--terracotta);
+        }
+
+        .footer-about p {
+            margin-bottom: 1.5rem;
+            color: var(--neutral-soft);
+        }
+
+        .footer-heading {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-contact p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            color: var(--neutral-soft);
+        }
+
+        .footer-contact i {
+            margin-right: 0.8rem;
+            color: var(--terracotta);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--terracotta);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--teal);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(233, 229, 225, 0.2);
+            color: var(--neutral-soft);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .hero-container, .about-container {
+                gap: 2rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-color);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 5px 15px var(--shadow);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-container, .about-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                padding: 7rem 0 3rem;
+            }
+            
+            .hero-image {
+                height: 300px;
+                order: -1;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .values {
+                grid-template-columns: 1fr;
+            }
+            
+            .quick-order-container {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            
+            .modal-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-img {
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+            
+            .about {
+                margin: 1rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Nonato<span>.</span></a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>Authentic Megrelian Pastries</h1>
+                <p>Handcrafted with tradition and love by Nona & Nato, bringing the flavors of Samegrelo to Tbilisi.</p>
+                <div class="hero-buttons">
+                    <a href="#menu" class="btn btn-primary">Menu</a>
+                    <a href="#contact" class="btn btn-secondary">Contact</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <i class="fas fa-bread-slice"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container about-container">
+            <div class="about-image">
+                <img src="images/history.jpg" alt="Our History" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="about-content">
+                <h2>Our Story</h2>
+                <p>Nonato Bakery was founded by Nona and Nato, daughter-in-laws from Samegrelo, Georgia. With years of experience as home cooks, they decided to share their passion for authentic Megrelian pastries with the people of Tbilisi.</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2010</div>
+                        <h4>Family Baking Begins</h4>
+                        <p>Started baking for family gatherings</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2018</div>
+                        <h4>Local Market Booth</h4>
+                        <p>First stall at Varketili market</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2024</div>
+                        <h4>Bakery Opening</h4>
+                        <p>Opened our physical location</p>
+                    </div>
+                </div>
+                
+                <div class="values">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4>Local Ingredients</h4>
+                        <p>Sourced from trusted suppliers</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-hand-rock"></i>
+                        </div>
+                        <h4>Handmade Daily</h4>
+                        <p>Freshly prepared each morning</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h4>Megrelian Recipes</h4>
+                        <p>Traditional family recipes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2>Our Menu</h2>
+            
+            <div class="menu-filters">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Savory</button>
+                <button class="filter-btn">Sweet</button>
+                <button class="filter-btn">Specialties</button>
+            </div>
+            
+            <div class="menu-grid">
+                <div class="menu-item" data-item="achma">
+                    <div class="menu-item-img">
+                        <i class="fas fa-bread-slice"></i>
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Achma</h3>
+                            <span class="menu-item-price">12₾</span>
+                        </div>
+                        <p class="menu-item-desc">Layered Megrelian cheese pastry</p>
+                        <div class="menu-item-tags">
+                            <span class="tag cheese">Cheese</span>
+                            <span class="tag">Traditional</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-item="khachapuri">
+                    <div class="menu-item-img">
+                        <i class="fas fa-cheese"></i>
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Imeretian Khachapuri</h3>
+                            <span class="menu-item-price">15₾</span>
+                        </div>
+                        <p class="menu-item-desc">Classic cheese-filled bread</p>
+                        <div class="menu-item-tags">
+                            <span class="tag cheese">Cheese</span>
+                            <span class="tag">Traditional</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-item="lobiani">
+                    <div class="menu-item-img">
+                        <i class="fas fa-drumstick-bite"></i>
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Lobiani</h3>
+                            <span class="menu-item-price">10₾</span>
+                        </div>
+                        <p class="menu-item-desc">Bean-filled traditional bread</p>
+                        <div class="menu-item-tags">
+                            <span class="tag">Savory</span>
+                            <span class="tag">Traditional</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-item="gozinaki">
+                    <div class="menu-item-img">
+                        <i class="fas fa-candy-cane"></i>
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Gozinaki</h3>
+                            <span class="menu-item-price">5₾</span>
+                        </div>
+                        <p class="menu-item-desc">Traditional walnut-honey candy</p>
+                        <div class="menu-item-tags">
+                            <span class="tag sweet">Sweet</span>
+                            <span class="tag">Traditional</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-item="pkhali">
+                    <div class="menu-item-img">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Pkhali Mix</h3>
+                            <span class="menu-item-price">7₾</span>
+                        </div>
+                        <p class="menu-item-desc">Assorted vegetable pâté</p>
+                        <div class="menu-item-tags">
+                            <span class="tag veg">Veg</span>
+                            <span class="tag">Traditional</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-item="churchkhela">
+                    <div class="menu-item-img">
+                        <i class="fas fa-candy-cane"></i>
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Churchkhela</h3>
+                            <span class="menu-item-price">4₾</span>
+                        </div>
+                        <p class="menu-item-desc">Walnut-filled grape candy</p>
+                        <div class="menu-item-tags">
+                            <span class="tag sweet">Sweet</span>
+                            <span class="tag">Traditional</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">Nonato<span>.</span></a>
+                    <p>Bringing authentic Megrelian taste to every home in Tbilisi since 2018.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Varketili, Tbilisi, Georgia</p>
+                    <p><i class="fas fa-phone"></i> +995 555 12 34 56</p>
+                    <p><i class="fas fa-envelope"></i> info@nonatobakery.ge</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sat: 8:00 AM - 8:00 PM</p>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h4 class="footer-heading">Newsletter</h4>
+                    <p>Subscribe for updates and special offers</p>
+                    <form>
+                        <input type="email" placeholder="Your email" style="padding: 12px; width: 100%; border-radius: 50px; border: none; margin-bottom: 1rem;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Nonato Bakery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Menu Item Modal -->
+    <div class="modal" id="itemModal">
+        <div class="modal-content">
+            <div class="modal-img">
+                <i class="fas fa-bread-slice" id="modal-icon"></i>
+            </div>
+            <div class="modal-body">
+                <button class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+                <h3 id="modal-name">Achma</h3>
+                <p class="modal-price" id="modal-price">12₾</p>
+                <p class="modal-desc" id="modal-desc">Layered Megrelian cheese pastry</p>
+                
+                <div class="modal-ingredients">
+                    <h4>Ingredients</h4>
+                    <p id="modal-ingredients">Flour, Sulguni cheese, butter, matsoni, eggs</p>
+                </div>
+                
+                <div class="modal-pairings">
+                    <h4>Recommended Pairings</h4>
+                    <p id="modal-pairings">Traditional Georgian tea, Matsoni drink</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const menuImg = mobileMenuBtn.querySelector('img');
+            if (menuImg) {
+                menuImg.style.transform = navLinks.classList.contains('active') ? 'rotate(90deg)' : 'rotate(0deg)';
+                menuImg.style.transition = 'transform 0.3s ease';
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    navLinks.classList.remove('active');
+                    const menuImg = mobileMenuBtn.querySelector('img');
+                    if (menuImg) {
+                        menuImg.style.transform = 'rotate(0deg)';
+                    }
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Modal functionality
+        const modal = document.getElementById('itemModal');
+        const menuItems = document.querySelectorAll('.menu-item');
+        const modalClose = document.querySelector('.modal-close');
+        
+        // Menu items data
+        const itemsData = {
+            achma: {
+                name: 'Megrelian Achma',
+                price: '12₾',
+                desc: 'Layered Megrelian cheese pastry',
+                ingredients: 'Flour, Sulguni cheese, butter, matsoni, eggs',
+                pairings: 'Traditional Georgian tea, Matsoni drink',
+                icon: 'fas fa-bread-slice'
+            },
+            khachapuri: {
+                name: 'Imeretian Khachapuri',
+                price: '15₾',
+                desc: 'Classic cheese-filled bread from Imereti',
+                ingredients: 'Flour, Imeretian cheese, yeast, milk, butter',
+                pairings: 'Georgian wine, Tomato salad',
+                icon: 'fas fa-cheese'
+            },
+            lobiani: {
+                name: 'Lobiani',
+                price: '10₾',
+                desc: 'Bean-filled traditional bread',
+                ingredients: 'Flour, kidney beans, onions, spices, oil',
+                pairings: 'Green salad, Matsoni',
+                icon: 'fas fa-drumstick-bite'
+            },
+            gozinaki: {
+                name: 'Gozinaki',
+                price: '5₾',
+                desc: 'Traditional Georgian walnut candy',
+                ingredients: 'Walnuts, honey, sugar',
+                pairings: 'Coffee, Tea',
+                icon: 'fas fa-candy-cane'
+            },
+            pkhali: {
+                name: 'Pkhali Mix',
+                price: '7₾',
+                desc: 'Assorted vegetable and walnut pâté',
+                ingredients: 'Spinach, beetroot, walnuts, garlic, cilantro, vinegar',
+                pairings: 'Shoti bread, Georgian wine',
+                icon: 'fas fa-leaf'
+            },
+            churchkhela: {
+                name: 'Churchkhela',
+                price: '4₾',
+                desc: 'Homemade walnut-filled candy',
+                ingredients: 'Grape must, walnuts, flour, sugar',
+                pairings: 'Tea, Coffee',
+                icon: 'fas fa-candy-cane'
+            }
+        };
+
+        // Open modal when menu item is clicked
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const itemId = item.getAttribute('data-item');
+                const itemData = itemsData[itemId];
+                
+                if (itemData) {
+                    document.getElementById('modal-name').textContent = itemData.name;
+                    document.getElementById('modal-price').textContent = itemData.price;
+                    document.getElementById('modal-desc').textContent = itemData.desc;
+                    document.getElementById('modal-ingredients').textContent = itemData.ingredients;
+                    document.getElementById('modal-pairings').textContent = itemData.pairings;
+                    document.getElementById('modal-icon').className = itemData.icon;
+                    
+                    modal.classList.add('show');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        // Close modal
+        modalClose.addEventListener('click', () => {
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Filter buttons
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Here you would normally filter the menu items
+                // For this example, we'll just show a message
+                console.log('Filtering by: ' + button.textContent);
+            });
+        });
+
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.menu-item, .value-card, .timeline-item');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = 1;
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Set initial state for animated elements
+        document.querySelectorAll('.menu-item, .value-card, .timeline-item').forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+
+        // Listen for scroll events
+        window.addEventListener('scroll', animateOnScroll);
+        // Trigger once on load
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
