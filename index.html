@@ -6,7 +6,7 @@
     <title>Nonato Bakery | Authentic Megrelian Pastries</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Nunito:wght@400;500;600&family=Noto+Sans+Georgian:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -28,7 +28,7 @@
         }
 
         body {
-            font-family: 'Nunito', sans-serif;
+            font-family: 'Nunito', 'Noto Sans Georgian', sans-serif;
             color: var(--text-color);
             background-color: var(--bg-color);
             line-height: 1.6;
@@ -430,12 +430,7 @@
             color: var(--text-color);
         }
 
-        .tag.veg {
-            background: rgba(107, 163, 160, 0.2);
-            color: var(--teal);
-        }
-
-        .tag.cheese {
+        .tag.baked {
             background: rgba(191, 169, 155, 0.3);
             color: var(--taupe);
         }
@@ -443,6 +438,11 @@
         .tag.sweet {
             background: rgba(217, 115, 95, 0.2);
             color: var(--terracotta);
+        }
+
+        .tag.drink {
+            background: rgba(107, 163, 160, 0.2);
+            color: var(--teal);
         }
 
         /* Modal */
@@ -787,10 +787,10 @@
             <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>            </button>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" style="font-family: 'Noto Sans Georgian'">სახლი</a></li>
+                <li><a href="#about" style="font-family: 'Noto Sans Georgian'">შესახებ</a></li>
+                <li><a href="#menu" style="font-family: 'Noto Sans Georgian'">მენიუ</a></li>
+                <li><a href="#contact" style="font-family: 'Noto Sans Georgian'">კონტაქტი</a></li>
             </ul>
         </div>
     </header>
@@ -802,8 +802,8 @@
                 <h1>Authentic Megrelian Pastries</h1>
                 <p>Handcrafted with tradition and love by Nona & Nato, bringing the flavors of Samegrelo to Tbilisi.</p>
                 <div class="hero-buttons">
-                    <a href="#menu" class="btn btn-primary">Menu</a>
-                    <a href="#contact" class="btn btn-secondary">Contact</a>
+                    <a href="#menu" class="btn btn-primary" style="font-family: 'Noto Sans Georgian'">მენიუ</a>
+                    <a href="#contact" class="btn btn-secondary" style="font-family: 'Noto Sans Georgian'">კონტაქტი</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -819,24 +819,24 @@
                 <img src="images/history.jpg" alt="Our History" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div class="about-content">
-                <h2>Our Story</h2>
+                <h2>ჩვენ შესახებ</h2>
                 <p>Nonato Bakery was founded by Nona and Nato, daughter-in-laws from Samegrelo, Georgia. With years of experience as home cooks, they decided to share their passion for authentic Megrelian pastries with the people of Tbilisi.</p>
                 
                 <div class="timeline">
                     <div class="timeline-item">
-                        <div class="timeline-year">2010</div>
-                        <h4>Family Baking Begins</h4>
-                        <p>Started baking for family gatherings</p>
+                        <div class="timeline-year">2000</div>
+                        <h4>საოჯახო სამზარეულო</h4>
+                        <p>მზარეულობა დავიწყეთ ოჯახისთვის</p>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-year">2018</div>
-                        <h4>Local Market Booth</h4>
-                        <p>First stall at Varketili market</p>
+                        <div class="timeline-year">2022</div>
+                        <h4>ლისის გზაზე</h4>
+                        <p>ჩვენი პირველი საცხობი</p>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-year">2024</div>
-                        <h4>Bakery Opening</h4>
-                        <p>Opened our physical location</p>
+                        <div class="timeline-year">2025</div>
+                        <h4>ნონატო საცხობი</h4>
+                        <p>დიდხნიანი ლოდინი დასრულდა</p>
                     </div>
                 </div>
                 
@@ -845,22 +845,22 @@
                         <div class="value-icon">
                             <i class="fas fa-leaf"></i>
                         </div>
-                        <h4>Local Ingredients</h4>
-                        <p>Sourced from trusted suppliers</p>
+                        <h4>ლოკალური ინგრედიენტები</h4>
+                        <p>მოწოდებული სანდო პარტნიორებისგან</p>
                     </div>
                     <div class="value-card">
                         <div class="value-icon">
                             <i class="fas fa-hand-rock"></i>
                         </div>
-                        <h4>Handmade Daily</h4>
-                        <p>Freshly prepared each morning</p>
+                        <h4>ხარისხიანი პროდუქცია</h4>
+                        <p>პროდუქტი მზადდება ყოველდღე</p>
                     </div>
                     <div class="value-card">
                         <div class="value-icon">
                             <i class="fas fa-book"></i>
                         </div>
-                        <h4>Megrelian Recipes</h4>
-                        <p>Traditional family recipes</p>
+                        <h4>ოჯახური რეცეპტები</h4>
+                        <p>ტდაიციული გზით დამზადებული საკვები</p>
                     </div>
                 </div>
             </div>
@@ -870,13 +870,13 @@
     <!-- Menu Section -->
     <section id="menu" class="menu">
         <div class="container">
-            <h2>Our Menu</h2>
+            <h2>ჩვენი მენიუ</h2>
             
             <div class="menu-filters">
-                <button class="filter-btn active">All</button>
-                <button class="filter-btn">Savory</button>
-                <button class="filter-btn">Sweet</button>
-                <button class="filter-btn">Specialties</button>
+                <button class="filter-btn active">ყველა</button>
+                <button class="filter-btn">ცხობა</button>
+                <button class="filter-btn">ტკბილეულობა</button>
+                <button class="filter-btn">სასმელები</button>
             </div>
             
             <div class="menu-grid">
@@ -886,13 +886,13 @@
                     </div>
                     <div class="menu-item-content">
                         <div class="menu-item-header">
-                            <h3 class="menu-item-title">Achma</h3>
+                            <h3 class="menu-item-title">აჩმა</h3>
                             <span class="menu-item-price">12₾</span>
                         </div>
-                        <p class="menu-item-desc">Layered Megrelian cheese pastry</p>
+                        <p class="menu-item-desc">ნონას უგემრიელესი აჩმა</p>
                         <div class="menu-item-tags">
-                            <span class="tag cheese">Cheese</span>
-                            <span class="tag">Traditional</span>
+                            <span class="tag baked">ცხობა</span>
+                            <span class="tag">ტრადიციული</span>
                         </div>
                     </div>
                 </div>
@@ -903,13 +903,13 @@
                     </div>
                     <div class="menu-item-content">
                         <div class="menu-item-header">
-                            <h3 class="menu-item-title">Imeretian Khachapuri</h3>
+                            <h3 class="menu-item-title">ხაჭაპური</h3>
                             <span class="menu-item-price">15₾</span>
                         </div>
-                        <p class="menu-item-desc">Classic cheese-filled bread</p>
+                        <p class="menu-item-desc">იმერიული მეგრული</p>
                         <div class="menu-item-tags">
-                            <span class="tag cheese">Cheese</span>
-                            <span class="tag">Traditional</span>
+                            <span class="tag baked">ცხობა</span>
+                            <span class="tag">ტრადიციული</span>
                         </div>
                     </div>
                 </div>
@@ -920,13 +920,13 @@
                     </div>
                     <div class="menu-item-content">
                         <div class="menu-item-header">
-                            <h3 class="menu-item-title">Lobiani</h3>
+                            <h3 class="menu-item-title">ლობიანი</h3>
                             <span class="menu-item-price">10₾</span>
                         </div>
-                        <p class="menu-item-desc">Bean-filled traditional bread</p>
+                        <p class="menu-item-desc">ლობიო ცომი</p>
                         <div class="menu-item-tags">
-                            <span class="tag">Savory</span>
-                            <span class="tag">Traditional</span>
+                            <span class="tag">ცხობა</span>
+                            <span class="tag">ტრადიციული</span>
                         </div>
                     </div>
                 </div>
@@ -937,13 +937,13 @@
                     </div>
                     <div class="menu-item-content">
                         <div class="menu-item-header">
-                            <h3 class="menu-item-title">Gozinaki</h3>
+                            <h3 class="menu-item-title">ჭიანჭველას ბუდე</h3>
                             <span class="menu-item-price">5₾</span>
                         </div>
-                        <p class="menu-item-desc">Traditional walnut-honey candy</p>
+                        <p class="menu-item-desc">კრემი ცომი</p>
                         <div class="menu-item-tags">
-                            <span class="tag sweet">Sweet</span>
-                            <span class="tag">Traditional</span>
+                            <span class="tag sweet">ტკბილეულობა</span>
+                            <span class="tag">ახალი</span>
                         </div>
                     </div>
                 </div>
@@ -954,13 +954,13 @@
                     </div>
                     <div class="menu-item-content">
                         <div class="menu-item-header">
-                            <h3 class="menu-item-title">Pkhali Mix</h3>
+                            <h3 class="menu-item-title">კომპოტი</h3>
                             <span class="menu-item-price">7₾</span>
                         </div>
-                        <p class="menu-item-desc">Assorted vegetable pâté</p>
+                        <p class="menu-item-desc">ატამი ალუბალი</p>
                         <div class="menu-item-tags">
-                            <span class="tag veg">Veg</span>
-                            <span class="tag">Traditional</span>
+                            <span class="tag drink">სასმელები</span>
+                            <span class="tag">ტრადიციული</span>
                         </div>
                     </div>
                 </div>
@@ -971,13 +971,13 @@
                     </div>
                     <div class="menu-item-content">
                         <div class="menu-item-header">
-                            <h3 class="menu-item-title">Churchkhela</h3>
+                            <h3 class="menu-item-title">ჩურჩხელა</h3>
                             <span class="menu-item-price">4₾</span>
                         </div>
-                        <p class="menu-item-desc">Walnut-filled grape candy</p>
+                        <p class="menu-item-desc">თხილი ბადაგი</p>
                         <div class="menu-item-tags">
-                            <span class="tag sweet">Sweet</span>
-                            <span class="tag">Traditional</span>
+                            <span class="tag sweet">ტკბილეულობა</span>
+                            <span class="tag">ტრადიციული</span>
                         </div>
                     </div>
                 </div>
@@ -991,7 +991,7 @@
             <div class="footer-container">
                 <div class="footer-about">
                     <a href="#" class="footer-logo">Nonato<span>.</span></a>
-                    <p>Bringing authentic Megrelian taste to every home in Tbilisi since 2018.</p>
+                    <p>ავთენტური ოჯახური სამზარეულო თბილისში, შეიგრძენით ნამდვილი გემო</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -999,19 +999,19 @@
                 </div>
                 
                 <div class="footer-contact">
-                    <h4 class="footer-heading">Contact Us</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> Varketili, Tbilisi, Georgia</p>
+                    <h4 class="footer-heading">დაგვიკავშირდით</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> ვარკეთილი, თბილისი</p>
                     <p><i class="fas fa-phone"></i> +995 555 12 34 56</p>
-                    <p><i class="fas fa-envelope"></i> info@nonatobakery.ge</p>
-                    <p><i class="fas fa-clock"></i> Mon-Sat: 8:00 AM - 8:00 PM</p>
+                    <p><i class="fas fa-envelope"></i> rdzlebi.nonato@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> ორშ-შაბ: 8:00 - 21:00 </p>
                 </div>
                 
                 <div class="footer-newsletter">
-                    <h4 class="footer-heading">Newsletter</h4>
-                    <p>Subscribe for updates and special offers</p>
+                    <h4 class="footer-heading">სიახლეები</h4>
+                    <p>სიახლეებისთვის გამოიწერეთ ჩვენი გვერდი</p>
                     <form>
-                        <input type="email" placeholder="Your email" style="padding: 12px; width: 100%; border-radius: 50px; border: none; margin-bottom: 1rem;">
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Subscribe</button>
+                        <input type="email" placeholder="ელ.ფოსტა" style="padding: 12px; width: 100%; border-radius: 50px; border: none; margin-bottom: 1rem;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">გამოწერა</button>
                     </form>
                 </div>
             </div>
@@ -1190,9 +1190,25 @@
                 // Add active class to clicked button
                 button.classList.add('active');
                 
-                // Here you would normally filter the menu items
-                // For this example, we'll just show a message
-                console.log('Filtering by: ' + button.textContent);
+                const category = button.textContent.trim();
+                const menuItems = document.querySelectorAll('.menu-item');
+                
+                menuItems.forEach(item => {
+                    const tags = item.querySelectorAll('.tag');
+                    if (category === 'ყველა') {
+                        item.style.display = 'block';
+                        return;
+                    }
+                    
+                    let hasCategory = false;
+                    tags.forEach(tag => {
+                        if (tag.textContent === category) {
+                            hasCategory = true;
+                        }
+                    });
+                    
+                    item.style.display = hasCategory ? 'block' : 'none';
+                });
             });
         });
 
